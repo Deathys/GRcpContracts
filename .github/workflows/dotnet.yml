@@ -23,7 +23,7 @@ jobs:
     - name: Restore dependencies
       run: | 
         cd src
-        echo pwd
+        echo && pwd
         dotnet restore
     - name: Build
       run: |
