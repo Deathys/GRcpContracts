@@ -22,10 +22,10 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: | 
-        cd ./GRcpContracts/src/GRcpContract
+        cd ./src/GRcpContract
         echo && pwd
         dotnet restore
     - name: Build
       run: |
-        cd ./GRcpContracts/src/GRcpContract
+        cd ./src/GRcpContract
         dotnet build --no-restore
