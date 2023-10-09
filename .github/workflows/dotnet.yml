@@ -27,9 +27,8 @@ jobs:
         dotnet restore
     - name: Build
       run: |
-        cd ./src/GRcpContract
         mkdir build
-        dotnet build -c Release -o build/ src/
+        dotnet build -c Release -o build/ ./src/GRcpContract/GRcpContract
     - name: Push to nuget
       run: |
         version=$(cat ./src/GRcpContract/GRcpContract/GRcpContract.csproj | grep "<Version" | head -n 1 | grep -o ">.*<" | tr -d '[><]' | awk -F '.' '{ print $1"."$2"."$3 }');
