@@ -38,7 +38,7 @@ jobs:
     - name: Build
       run: |
         mkdir build
-        dotnet build -c Release -o build/ ./src/GRcpContract/GRcpContract
+        dotnet build -c Release -o build/ ./src/GRcpContract
     - name: Push to nuget
       env: 
         token: ${{ secrets.GITTOKEN }}
