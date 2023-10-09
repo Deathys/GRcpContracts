@@ -33,4 +33,4 @@ jobs:
       env: 
         token: ${{ secrets.GITTOKEN }}
       run: |
-        dotnet nuget push "./build/*.nupkg" --api-key $token --source "https://nuget.pkg.github.com/Deathys/index.json"
+        dotnet nuget push "./build/*.nupkg" -s https://nuget.pkg.github.com/Deathys/index.json -k $token
