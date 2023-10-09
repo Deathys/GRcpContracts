@@ -33,5 +33,4 @@ jobs:
       env: 
         token: ${{ secrets.GITTOKEN }}
       run: |
-        dotnet nuget add source --username Deathys --password $token --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Deathys/index.json"
-        dotnet nuget push "./build/*.nupkg" --source github
+        dotnet nuget push "./build/*.nupkg" --api-key $token --source "https://nuget.pkg.github.com/Deathys/index.json"
