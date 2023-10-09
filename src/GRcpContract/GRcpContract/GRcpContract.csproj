@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <PackageId>GRcpContract</PackageId>
         <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>latestmajor</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Version>1.0.0</Version>
+        <PackageId>GRcpContract</PackageId>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-        <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
