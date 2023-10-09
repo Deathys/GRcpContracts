@@ -30,8 +30,10 @@ jobs:
         mkdir build
         dotnet build -c Release -o build/ ./src/GRcpContract/GRcpContract
     - name: Push to nuget
+      env: 
+        token: ${{ secrets.GITTOKEN }}
       run: |
         version=$(cat ./src/GRcpContract/GRcpContract/GRcpContract.csproj | grep "<Version" | head -n 1 | grep -o ">.*<" | tr -d '[><]' | awk -F '.' '{ print $1"."$2"."$3 }');
         echo $version
-        dotnet nuget add source --username deathys --password ${{ secrets.GITTOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/deathys/index.json"
+        dotnet nuget add source --username Deathys --password $token --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Deathys/index.json"
         dotnet nuget push "./build/GRcpContract.$version.nupkg" --source github
