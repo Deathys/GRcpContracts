@@ -23,9 +23,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -45,4 +43,5 @@ jobs:
       env: 
         token: ${{ secrets.GITTOKEN }}
       run: |
+        echo && ls -l ./build
         dotnet nuget push "./build/*.nupkg" -s https://nuget.pkg.github.com/Deathys/index.json -k $token
