@@ -4,15 +4,20 @@
         <TargetFramework>net6.0</TargetFramework>
         <LangVersion>latestmajor</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.0.0</Version>
+        <Version>1.1.0</Version>
         <PackageId>GRcpContract</PackageId>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="Protos\**\*.proto">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
+        <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
+        <PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" />
     </ItemGroup>
+
+<!--    <ItemGroup>-->
+<!--        <Content Include="Protos\**\*.proto" Pack="true" PackagePath="content">-->
+<!--            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>-->
+<!--        </Content>-->
+<!--    </ItemGroup>-->
 
 </Project>
