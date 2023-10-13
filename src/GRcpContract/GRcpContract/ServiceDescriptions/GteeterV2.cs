@@ -20,6 +20,9 @@ namespace GRcpContract.ServiceDescriptions
 
         [DataMember(Order = 4)]
         public decimal Pos { get; set; }
+        
+        [DataMember(Order = 5)]
+        public decimal Field { get; set; }
     }
 
     [DataContract]
@@ -27,6 +30,9 @@ namespace GRcpContract.ServiceDescriptions
     {
         [DataMember(Order = 1)]
         public string Name { get; set; }
+        
+        [DataMember(Order = 2)]
+        public string Field { get; set; }
     }
 
     [ServiceContract]
