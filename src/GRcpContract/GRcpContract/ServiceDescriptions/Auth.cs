@@ -42,4 +42,5 @@ public enum EUserStatus
     None,
     Active,
     Deleted,
+    Frozen,
 }
