@@ -9,7 +9,7 @@ using ProtoBuf.Grpc;
 namespace GRcpContract.ServiceDescriptions;
 
 
-[ServiceContract(Namespace = "Auth")]
+[ServiceContract(Name = "AuthService", Namespace = "Auth")]
 public interface IAuth
 {
     [OperationContract]
