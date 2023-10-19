@@ -13,7 +13,10 @@ namespace GRcpContract.ServiceDescriptions;
 public interface IAuth
 {
     [OperationContract]
-    Task<GetUserResponse> GetUserAsync(GetUserRequest request, CallContext context = default);
+    Task<GetUserResponse> GetUserAsync(GetUserRequest request, CallContext context = default)
+    {
+        return Task.FromResult((GetUserResponse)null);
+    }
 }
 
 [DataContract] 
