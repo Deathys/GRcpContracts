@@ -10,43 +10,32 @@ namespace GRcpContract.ServiceDescriptions;
 
 
 [ServiceContract(Name = "Auth")]
-public interface IAuth
+public interface IAuth2
 {
     [OperationContract]
-    Task<GetUserResponse> GetUserAsync(GetUserRequest request, CallContext context = default)
+    Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, CallContext context = default)
     {
-        return Task.FromResult((GetUserResponse)null);
+        return Task.FromResult((UpdateUserResponse)null);
     }
 }
 
 [DataContract] 
-public class GetUserRequest
+public class UpdateUserRequest
 {
-    [DataMember(Order = 1)]
+    [DataMember(Order = 1, IsRequired = true )]
     public Guid UserId { get; set; }
-}
-
-[DataContract]
-public class GetUserResponse
-{
-    [DataMember(Order = 1)]
-    public Guid UserId { get; set; }
-
+    
     [DataMember(Order = 2)]
     public string Name { get; set; }
-
-    [DataMember(Order = 3)]
-    public DateTime Created { get; set; }
-
+    
     [JsonConverter(typeof(StringEnumConverter))]
-    [DataMember(Order = 4)]
+    [DataMember(Order = 3)]
     public EUserStatus Status { get; set; }
 }
 
-public enum EUserStatus
+[DataContract]
+public class UpdateUserResponse
 {
-    None,
-    Active,
-    Deleted,
-    Frozen,
+    [DataMember(Order = 1)]
+    public bool Success { get; set; }
 }
